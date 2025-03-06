@@ -22,7 +22,7 @@ def hello_world(request: Request):
     
 
     # Make API request dynamically
-    response = requests.api.get(url, params)
+    response = requests.api.get(url)
 
     # Return response as json
     return response.json()
