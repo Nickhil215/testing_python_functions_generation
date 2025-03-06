@@ -1,9 +1,28 @@
+ 
+# Auto-generated Python Script
+
+# Required Imports
 from flask import Request
 
+import requests.sessions
+
+
+# Function Definitions
 def hello_world(request: Request):
+    """Function to handle API requests"""
+
+    # Parse the JSON body
     request_json = request.get_json(silent=True)
 
-    if request_json and "name" in request_json:
-        return f"Hello, {request_json['name']}!"
-    else:
-        return "Hello, World!"
+    # Extract required parameters dynamically
+    
+    url = request_json.get("url")
+    
+    params = request_json.get("params")
+    
+
+    # Make API request dynamically
+    response = requests.api.get(url, params)
+
+    # Return response as json
+    return response.json()
